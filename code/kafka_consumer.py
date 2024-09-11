@@ -17,7 +17,7 @@ filtered_logs_required_fields = [
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # MongoDB Atlas 설정
-mongo_uri = "mongodb+srv://test:1234@cluster0.hqxzgtw.mongodb.net/network_catcher_database?retryWrites=true&w=majority&appName=Cluster0"
+mongo_uri = ""
 try:
     client = MongoClient(mongo_uri, tls=True, tlsAllowInvalidCertificates=True, serverSelectionTimeoutMS=5000)
     client.admin.command('ping')
@@ -35,10 +35,10 @@ collection.create_index([('@timestamp', 1)], expireAfterSeconds=5*24*60*60)
 
 # Kafka 설정 및 Consumer 생성
 consumer = KafkaConsumer(
-    'filtered_logs',
-    bootstrap_servers='localhost:9092',
-    group_id='suricata_consumer_group',
-    auto_offset_reset='latest',
+    '',
+    bootstrap_servers='',
+    group_id='',
+    auto_offset_reset='',
     enable_auto_commit=True
 )
 
