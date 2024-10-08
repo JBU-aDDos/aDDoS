@@ -1,13 +1,16 @@
+/* 전체를 감싸는 컨테이너 스타일 */
 .current {
   text-align: center;
 }
 
+/* 테이블 전체 스타일 */
 .table {
   width: 90%;
-  border-collapse: collapse;
+  border-collapse: collapse; /* 테이블 셀 간의 경계를 겹치게 하여 깔끔한 스타일 */
   margin: 0 auto;
 }
 
+/* 테이블 헤더 및 셀 스타일 */
 .table th,
 .table td {
   border: 1px solid #ddd;
@@ -18,17 +21,21 @@
   border-right: none;
 }
 
+/* 첫 번째 셀 너비 조정 */
 .table td:first-child {
   width: 20%;
 }
+/* 마지막 셀 너비 조정 */
 .table td:last-child {
   width: 30%;
 }
 
+/* 테이블 행에 마우스를 올렸을 때의 스타일 */
 .table tbody tr:hover {
   background-color: #f1f1f1;
 }
 
+/* 상태 표시등 스타일 */
 .status {
   display: inline-block;
   width: 10px;
@@ -37,14 +44,17 @@
   margin-right: 5px;
 }
 
+/* 'Rejected' 상태의 스타일 */
 .status.rejected {
   background-color: red;
 }
 
+/* 'Approved' 상태의 스타일 */
 .status.approved {
   background-color: green;
 }
 
+/* 'Pending' 상태의 스타일 */
 .status.pending {
   background-color: orange;
 }
