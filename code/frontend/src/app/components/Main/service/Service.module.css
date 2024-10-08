@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap');
 
+/* 서비스 컨테이너 스타일 */
 .explanation {
   text-align: center;
   font-family: 'Black Han Sans', sans-serif;
@@ -8,46 +9,55 @@
   text-shadow: 2px 2px 4px #000000;
 }
 
+/* 애니메이션 전 기본 텍스트 스타일 */
 .text {
   opacity: 0;
   margin-top: 50px;
   margin-bottom: 100px;
 }
 
+/* 애니메이션이 적용된 텍스트 스타일 */
 .text.animate {
   animation: fadeInLeft 1.5s forwards;
 }
 
+/* 좌측에서 등장하는 애니메이션 */
 @keyframes fadeInLeft {
   from {
-    opacity: 0;
+    opacity: 0; /* 처음에 불투명도 0 (투명) */
     transform: translateX(-50px);
   }
   to {
-    opacity: 1;
+    opacity: 1; /* 마지막에 불투명도 1 (완전 표시) */
     transform: translateX(0);
   }
 }
 
+/* 두 번째 텍스트 애니메이션 지연 */
 .text.two {
   animation-delay: 0.2s;
 }
+
+/* 세 번째 텍스트 애니메이션 지연 */
 .text.three {
   animation-delay: 0.4s;
 }
 
+/* 화면 너비가 800px 이하일 때 스타일 */
 @media (max-width: 800px) {
   .explanation {
     font-size: 25px;
   }
 }
 
+/* 화면 너비가 700px 이하일 때 스타일 */
 @media (max-width: 700px) {
   .explanation {
     font-size: 20px;
   }
 }
 
+/* 화면 너비가 550px 이하일 때 스타일 */
 @media (max-width: 550px) {
   .text {
     font-size: 17px;

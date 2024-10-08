@@ -1,12 +1,20 @@
+/*
+  - CurrentRules: 현재 적용된 수리카타 룰을 표시하는 컴포넌트
+  - CurrentRulesProps: 각 룰의 정보를 나타내는 타입 정의
+  - data: 룰 정보를 담고 있는 배열, 각 룰은 명령어, 설명, 상태를 포함한다.
+  - randomUUID: JavaScript의 Crypto API의 메서드로 항목을 렌더링할 때 각 항목을 고유하게 식별하기 위해 필요하다.
+  - toLowerCase: status의 값을 소문자로 변환하여 클래스 이름으로 사용한다. 대소문자 구분 없이 일관된 클래스 이름을 생성하기 위해 사용한다.
+*/
+
 import styles from './CurrentRules.module.css';
 
-interface Order {
-  command: string;
-  desc: string;
-  status: 'Rejected' | 'Approved' | 'Pending';
+interface CurrentRulesProps {
+  command: string; // 수리카타 명령어
+  desc: string; // 명령어 설명
+  status: 'Rejected' | 'Approved' | 'Pending'; // 룰 적용 상태 (거부, 승인, 보류)
 }
 
-const data: Order[] = [
+const data: CurrentRulesProps[] = [
   {
     command: 'msg',
     desc: '경고 이벤트 메세지',
@@ -74,6 +82,7 @@ export default function CurrentRules() {
         <tbody>
           {data.map((item) => (
             <tr key={crypto.randomUUID()}>
+              {/* 고유한 키를 위해 랜덤 UUID 사용 */}
               <td>{item.command}</td>
               <td>{item.desc}</td>
               <td>
@@ -81,7 +90,9 @@ export default function CurrentRules() {
                   className={`${styles.status} ${
                     styles[item.status.toLowerCase()]
                   }`}
-                ></span>
+                >
+                  {/* 상태에 따라 동적으로 클래스 이름 설정 */}
+                </span>
                 {item.status}
               </td>
             </tr>

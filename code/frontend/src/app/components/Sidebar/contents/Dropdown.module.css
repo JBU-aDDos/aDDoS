@@ -1,40 +1,47 @@
+/* 드롭다운 컴포넌트의 기본 스타일 */
 .dropdown {
   position: relative;
   display: flex;
 }
 
+/* 드롭다운 제목 스타일 */
 .dropdownTitle {
   margin-left: 50px;
 }
+
+/* 드롭다운 토글 버튼 스타일 */
 .dropdownToggle {
   width: 60px;
   height: 60px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* 내부 요소 사이의 공간을 균등하게 배분 */
   cursor: pointer;
   background: #3498db;
   border: 3px solid #3498db;
   border-radius: 10px;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out; /* 변형 시 부드러운 애니메이션 효과 적용 */
 }
 
+/* 드롭다운 토글 버튼 내부의 선 스타일 */
 .Toggle {
   cursor: pointer;
-  background: none;
+  background: none; /* 배경 없음 */
   border: none;
   height: 41px;
   margin: auto;
   margin-right: 10px;
 }
 
+/* 드롭다운 토글 버튼 내부 선의 기본 스타일 */
 .dropdownToggle div {
   width: 35px;
   height: 4px;
   background: #ffffff;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* 모든 변화에 대해 부드러운 애니메이션 효과 적용 */
 }
 
+/* 드롭다운 메뉴 스타일 */
 .dropdownMenu {
   display: block;
   position: absolute;
@@ -46,12 +53,14 @@
   right: 0px;
 }
 
+/* 드롭다운 메뉴의 라벨 스타일 */
 .dropdownMenu label {
   display: flex;
   padding: 10px;
   cursor: pointer;
 }
 
+/* 드롭다운 메뉴 라벨에 마우스를 올렸을 때의 스타일 */
 .dropdownMenu label:hover {
   background-color: #f1f1f1;
 }
