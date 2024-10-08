@@ -1,27 +1,34 @@
+/*
+  - Service: 메인페이지에서 프로젝트가 제공하는 서비스를 소개하는 컴포넌트
+  - observer: 요소가 화면에 보이는지 여부를 감지하는 기능
+*/
+
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './service.module.css';
 
 const Service = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false); // 요소가 화면에 보이는지 여부를 저장하는 상태값
+  const ref = useRef<HTMLDivElement>(null); // DOM 요소에 대한 참조를 저장하는 ref
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsVisible(entry.isIntersecting);
+          setIsVisible(entry.isIntersecting); // 요소가 화면에 보이면 isVisible을 true로 설정
         });
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.1, // 요소의 10%가 보여질 때 애니메이션을 시작합니다.
+      }
     );
 
     if (ref.current) {
-      observer.observe(ref.current);
+      observer.observe(ref.current); // ref로 참조된 DOM 요소를 관찰
     }
 
     return () => {
       if (ref.current) {
-        observer.disconnect();
+        observer.disconnect(); // 컴포넌트가 언마운트될 때 관찰을 중단
       }
     };
   }, []);
