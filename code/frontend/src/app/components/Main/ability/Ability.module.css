@@ -1,7 +1,8 @@
+/* 어빌리티 컨테이너 스타일 */
 .ability {
   display: flex;
   align-items: center;
-  opacity: 0;
+  opacity: 0; /* 애니메이션 전까지 요소를 보이지 않게 설정 */
   position: relative;
   width: 100%;
   margin: 50px;
@@ -9,13 +10,15 @@
   height: 80%;
 }
 
+/* 프로젝트 기능 이미지 스타일 */
 .image {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 3; /* 이미지의 가로 세로 비율을 4:3으로 고정 */
   max-width: 500px;
 }
 
+/* 이미지 옆 설명 텍스트 스타일 */
 .description {
   margin-left: 10%;
   font-size: large;
@@ -23,28 +26,32 @@
   text-shadow: 2px 2px 4px #000000;
 }
 
+/* 어빌리티 컨테이너 애니메이션 */
 .ability.animate {
-  animation: fadeInUp 0.9s ease-out forwards;
+  animation: fadeInUp 0.9s ease-out forwards; /* fadeInUp 애니메이션을 0.9초 동안 실행 */
 }
 
+/* 요소가 아래에서 위로 등장하는 애니메이션 정의 */
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(100px);
+    opacity: 0; /* 처음에 불투명도 0 (투명) */
+    transform: translateY(100px); /* 아래에서 위로 움직이기 시작 */
   }
   to {
-    opacity: 1;
-    transform: translateY(0px);
+    opacity: 1; /* 마지막에 불투명도 1 (완전 표시) */
+    transform: translateY(0px); /* 원래 위치로 이동 */
   }
 }
 
 @media (max-width: 900px) {
+  /* 화면이 작을 때 요소를 세로로 정렬하는 미디어 쿼리 */
   .ability {
     flex-direction: column;
     text-align: center;
     justify-content: center;
     width: 70%;
   }
+  /* 작은 화면에서 텍스트 설명의 레이아웃 조정 */
   .description {
     margin-top: 50px;
     margin-left: 0;
