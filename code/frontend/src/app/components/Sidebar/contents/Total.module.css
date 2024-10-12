@@ -1,7 +1,9 @@
+/* 컴포넌트 전체 텍스트 정렬 */
 .Total {
   text-align: center;
 }
 
+/* 최대 값 컨테이너 스타일 */
 .highcontainer {
   background-color: #ffcccc;
   padding: 20px;
@@ -11,6 +13,7 @@
   margin: 30px auto;
 }
 
+/* 최소 값 컨테이너 스타일 */
 .lowcontainer {
   background-color: #ccccff;
   padding: 20px;
@@ -20,6 +23,7 @@
   margin: 30px auto;
 }
 
+/* 평균 값 컨테이너 스타일 */
 .averagecontainer {
   background-color: #ccff99;
   padding: 20px;
@@ -29,6 +33,7 @@
   margin: 30px auto;
 }
 
+/* 통계 항목 스타일 */
 .stat {
   display: flex;
   align-items: center;
@@ -36,6 +41,7 @@
   color: #333;
 }
 
+/* 전체 점 스타일 */
 .dot {
   display: inline-block;
   width: 10px;
@@ -44,14 +50,17 @@
   margin-right: 10px;
 }
 
+/* 최대 값 점 스타일 */
 .high {
   background-color: red;
 }
 
+/* 최소 값 점 스타일 */
 .low {
   background-color: blue;
 }
 
+/* 평균 값 점 스타일 */
 .average {
   background-color: green;
 }
