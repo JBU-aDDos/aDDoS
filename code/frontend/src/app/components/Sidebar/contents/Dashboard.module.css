@@ -1,19 +1,16 @@
-/* 대시보드 전체 레이아웃 스타일 */
 .dashboard {
   display: flex;
   min-height: 100vh;
   background: #f0f8ff;
 }
 
-/* 대시보드 섹션을 감싸는 래퍼 */
 .sectionWrap {
   width: 97%;
   display: flex;
-  flex-wrap: wrap; /* 공간이 부족할 경우 섹션을 다음 줄로 이동 */
+  flex-wrap: wrap;
   margin: 20px auto;
 }
 
-/* 대시보드 섹션 공통 스타일 */
 .section0,
 .section1,
 .section2,
@@ -24,47 +21,39 @@
   margin: 20px auto;
 }
 
-/* 첫 번째 섹션 스타일 */
 .section0 {
   width: 300px;
   margin: auto;
   margin-right: 0;
 }
 
-/* 두 번째 섹션 스타일 */
 .section1 {
   width: 70%;
 }
 
-/* 세 번째 섹션 스타일 */
 .section2 {
   width: 25%;
 }
 
-/* 네 번째 섹션 스타일 */
 .section3 {
   width: 47.5%;
   min-height: 300px;
 }
 
-/* 다섯 번째 섹션 스타일 */
 .section4 {
   width: 47.5%;
 }
 
-/* 숨겨진 섹션의 스타일 */
 .hidden {
-  background: none; /* 배경을 없앰 */
+  background: none;
 }
 
-/* 작은 화면(600px 이하)에서 섹션3의 버튼 크기를 조정 */
 @media (max-width: 600px) {
   .section3 Button {
-    transform: scale(0.6); /* 버튼 크기를 60%로 줄임 */
+    transform: scale(0.6);
   }
 }
 
-/* 중간 화면(1100px 이하)에서 섹션들의 너비를 조정 */
 @media (max-width: 1100px) {
   .section1,
   .section2,
