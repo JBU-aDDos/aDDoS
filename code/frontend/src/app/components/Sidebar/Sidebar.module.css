@@ -1,3 +1,4 @@
+/* 사이드바 기본 스타일 */
 .sidebar {
   z-index: 999;
   width: 200px;
@@ -6,12 +7,13 @@
   left: -200px;
   height: 90%;
   background-color: #223355;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out; /* 열릴 때 부드러운 이동 효과 */
   display: flex;
   flex-direction: column;
   padding-top: 60px;
 }
 
+/* 사이드바 링크 기본 스타일 */
 .sidebarLink {
   padding: 25px;
   color: white;
@@ -19,61 +21,70 @@
   text-align: left;
   margin-bottom: 50px;
   background-color: #223355;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s; /* 배경색 변화에 부드러운 효과 */
   border: none;
   cursor: pointer;
 }
 
+/* 사이드바 링크에 마우스를 올렸을 때의 스타일 */
 .sidebarLink:hover {
   background-color: RGB(102, 204, 255);
 }
 
+/* 사이드바가 열린 상태에서의 스타일 */
 .sidebarOpen {
-  transform: translateX(200px);
-  transition: transform 0.5s ease-in-out;
+  transform: translateX(200px); /* 사이드바가 오른쪽으로 이동 */
+  transition: transform 0.5s ease-in-out; /* 이동할 때 부드러운 효과 */
 }
 
+/* 사이드바 열림 버튼의 열린 상태 스타일 */
 .open {
-  transform: translateX(140px);
-  transition: transform 0.5s ease-in-out;
+  transform: translateX(140px); /* 열림 상태에서 버튼의 위치 이동 */
+  transition: transform 0.5s ease-in-out; /* 이동할 때 부드러운 효과 */
 }
 
+/* 아이콘 스타일 */
 .icon {
   margin-right: 20px;
 }
 
+/* 햄버거 메뉴 기본 스타일 */
 .hamburger {
   top: 90px;
   width: 35px;
   height: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* 요소 간 간격 분배 */
   cursor: pointer;
   z-index: 1000;
   position: fixed;
   background: #223355;
   border: 10px solid #223355;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  transition: transform 0.5s ease-in-out;
+  border-top-right-radius: 10px; /* 상단 오른쪽 모서리 둥글게 */
+  border-bottom-right-radius: 10px; /* 하단 오른쪽 모서리 둥글게 */
+  transition: transform 0.5s ease-in-out; /* 이동할 때 부드러운 효과 */
 }
 
+/* 햄버거 메뉴 내부 요소 스타일 */
 .hamburger div {
   width: 35px;
   height: 4px;
   background: #ffffff;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* 모든 변화에 부드러운 효과 */
 }
 
+/* 햄버거 메뉴 열린 상태에서의 첫 번째 선 스타일 */
 .open .line1 {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px); /* 45도 회전 및 위치 이동 */
 }
 
+/* 햄버거 메뉴 열린 상태에서의 두 번째 선 스타일 */
 .open .line2 {
-  opacity: 0;
+  opacity: 0; /* 두 번째 선의 투명도 0으로 설정 (숨김) */
 }
 
+/* 햄버거 메뉴 열린 상태에서의 세 번째 선 스타일 */
 .open .line3 {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(5px, -5px); /* -45도 회전 및 위치 이동 */
 }

@@ -11,14 +11,14 @@ filtered_logs_required_fields = [
     'state', 'reason', 'flow_id', 'app_proto', 'tcp_flags_ts', 'tcp_flags_tc', 'bytes_toserver',
     'pkts_toserver', 'bytes_toclient', 'pkts_toclient', 'start', 'end', 'age', 'http_method', 'url',
     'http_user_agent', 'status', 'length', 'http_content_type', 'query_type', 'query_name',
-    'icmp_type', 'icmp_code', 'response_code', 'Network Segment', 'event_type', 'in_iface'  # 'in_iface' 필드 추가
+    'icmp_type', 'icmp_code', 'response_code', 'Network Segment', 'event_type', 'in_iface' 
 ]
 
 # 로그 설정
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # MongoDB Atlas 설정
-mongo_uri = "[몽고 DB URI]"
+mongo_uri = "[mongo uri]"
 try:
     client = MongoClient(mongo_uri, tls=True, tlsAllowInvalidCertificates=True, serverSelectionTimeoutMS=5000)
     # 서버 상태 확인
@@ -29,15 +29,15 @@ except ConnectionFailure as e:
     exit(1)
 
 # 데이터베이스와 컬렉션 설정
-db = client['network_catcher_database']
-collection = db['traffic']
+db = client['[db name]']
+collection = db['[collection name]']
 
 # TTL 인덱스 생성
 collection.create_index([('@timestamp', 1)], expireAfterSeconds=5*24*60*60)
 
 # Kafka 설정 및 Consumer 생성
 consumer = KafkaConsumer(
-	[토픽 연결 설정]
+    ["kafka 설정"]
 )
 
 def extract_filtered_data(data, required_fields):
